@@ -1,0 +1,30 @@
+{
+  "name": "legofy",
+  "version": "0.1.1",
+  "description": "JavaScript adaptation of the terribly ingenious Python Legofy.",
+  "main": "src/core.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wildhoney/Legofy.git"
+  },
+  "keywords": [
+    "lego",
+    "legofy"
+  ],
+  "author": "Adam Timberlake <adam.timberlake@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wildhoney/Legofy/issues"
+  },
+  "homepage": "https://github.com/Wildhoney/Legofy#readme",
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-karma": "0.0.5"
+  }
+}
