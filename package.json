@@ -1,7 +1,7 @@
 {
   "name": "legofy",
   "version": "0.1.1",
-  "description": "JavaScript adaptation of the terribly ingenious Python Legofy.",
+  "description": "",
   "main": "src/core.js",
   "scripts": {
     "test": "gulp test"
