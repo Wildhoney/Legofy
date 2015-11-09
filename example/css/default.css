@@ -3,10 +3,25 @@
     padding: 0;
 }
 
+body {
+    overflow: hidden;
+}
+
 canvas {
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+div.original {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    background: transparent url('./../images/beachy-head.jpg') no-repeat left center;
+    background-size: 200% 100%;
+    border-right: 5px solid white;
+    box-shadow: inset -5px 0 0 white;
 }
