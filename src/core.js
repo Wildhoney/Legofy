@@ -1,4 +1,10 @@
 /**
+ * @constant DEVICE_PIXEL_RATIO
+ * @type {Number}
+ */
+const DEVICE_PIXEL_RATIO = 2;
+
+/**
  * @method transform
  * @param {Element} canvas
  * @param {Number} [factor=.05]
@@ -38,6 +44,8 @@ export function transform(canvas, { factor = .05 } = {}) {
         context.drawImage(canvas, 0, 0, pixels.width, pixels.height, 0, 0, width, height);
 
         // Apply the Lego brick on top of the pixelated image.
+
+        context.scale(1 / DEVICE_PIXEL_RATIO, 1 / DEVICE_PIXEL_RATIO);
         context.rect(0, 0, width, height);
         context.globalCompositeOperation = 'overlay';
         context.fillStyle = context.createPattern(pattern, 'repeat');
@@ -72,6 +80,20 @@ function createPattern(src, { factor }) {
     const image   = createImage(src);
     canvas.width  = size;
     canvas.height = size;
+
+    if (DEVICE_PIXEL_RATIO > 1) {
+
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        canvas.width = canvasWidth * DEVICE_PIXEL_RATIO;
+        canvas.height = canvasHeight * DEVICE_PIXEL_RATIO;
+        canvas.style.width = canvasWidth;
+        canvas.style.height = canvasHeight;
+
+        context.scale(DEVICE_PIXEL_RATIO, DEVICE_PIXEL_RATIO);
+
+    }
 
     context.drawImage(image, 0, 0, image.width, image.height, 0, 0, size, size);
 
