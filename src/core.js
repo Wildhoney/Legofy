@@ -66,38 +66,3 @@ function createImage(src) {
     image.setAttribute('src', src);
     return image;
 }
-
-/**
- * @method createPattern
- * @param {String} src
- * @param {Number} factor
- * @return {Element}
- */
-function createPattern(src, { factor }) {
-
-    const size    = factor * 400;
-    const canvas  = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    const image   = createImage(src);
-    canvas.width  = size;
-    canvas.height = size;
-
-    if (DEVICE_PIXEL_RATIO > 1) {
-
-        const canvasWidth = canvas.width;
-        const canvasHeight = canvas.height;
-
-        canvas.width = canvasWidth * DEVICE_PIXEL_RATIO;
-        canvas.height = canvasHeight * DEVICE_PIXEL_RATIO;
-        canvas.style.width = canvasWidth;
-        canvas.style.height = canvasHeight;
-
-        context.scale(DEVICE_PIXEL_RATIO, DEVICE_PIXEL_RATIO);
-
-    }
-
-    context.drawImage(image, 0, 0, image.width, image.height, 0, 0, size, size);
-
-    return canvas;
-
-}
