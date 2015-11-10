@@ -20,5 +20,9 @@ Simply `import` the `transform` function from the Legofy module, and then invoke
 
 ```javascript
 import {transform} from 'legofy';
-transform(document.querySelector('img'));
+
+// ...
+
+const imgElement = document.querySelector('img');
+transform(imgElement);
 ```
