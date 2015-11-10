@@ -28,7 +28,7 @@ export function transform(img, { factor = .05 } = {}) {
         return parseInt(getComputedStyle(img).getPropertyValue(property));
     };
 
-    // Define the original image's source if we haven't already.
+    // Memorise the original image's source if we haven't already.
     !img.hasAttribute(DATA_ORIGINAL_SRC) && img.setAttribute(DATA_ORIGINAL_SRC, src);
 
     original.addEventListener('load', () => {
