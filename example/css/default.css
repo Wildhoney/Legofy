@@ -7,12 +7,22 @@ body {
     overflow: hidden;
 }
 
-img {
+img.lego {
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+img.logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    z-index: 2;
 }
 
 div.original {
