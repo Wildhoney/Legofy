@@ -26,5 +26,10 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-karma": "0.0.5"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }
