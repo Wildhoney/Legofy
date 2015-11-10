@@ -1,8 +1,8 @@
 /**
- * @constant DEVICE_PIXEL_RATIO
- * @type {Number}
+ * @constant DATA_ORIGINAL_SRC
+ * @type {String}
  */
-const DEVICE_PIXEL_RATIO = 2;
+const DATA_ORIGINAL_SRC = 'data-src-original';
 
 /**
  * @method transform
@@ -25,6 +25,9 @@ export function transform(img, { factor = .05 } = {}) {
     const getDimension = property => {
         return parseInt(getComputedStyle(img).getPropertyValue(property));
     };
+
+    // Define the original image's source if we haven't already.
+    !img.hasAttribute(DATA_ORIGINAL_SRC) || img.setAttribute(DATA_ORIGINAL_SRC, src);
 
     original.addEventListener('load', () => {
 
