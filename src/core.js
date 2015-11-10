@@ -1,3 +1,5 @@
+import {debounce} from 'lodash';
+
 /**
  * @constant DATA_ORIGINAL_SRC
  * @type {String}
@@ -5,14 +7,26 @@
 const DATA_ORIGINAL_SRC = 'data-src-original';
 
 /**
+ * @constant DEBOUNCE_THRESHOLD
+ * @type {Number}
+ */
+const DEBOUNCE_THRESHOLD = 100;
+
+/**
+ * @property images
+ * @type {Array}
+ */
+const images = [];
+
+/**
  * @method transform
  * @param {Element} img
- * @param {Number} [factor=.05]
  * @return {Element}
  */
-export function transform(img, { factor = .05 } = {}) {
+export function transform(img) {
 
-    const src       = img.getAttribute('src');
+    const factor    = .05;
+    const src       = img.getAttribute(DATA_ORIGINAL_SRC) || img.getAttribute('src');
     const original  = createImage(src);
     const canvas    = document.createElement('canvas');
     const context   = canvas.getContext('2d');
@@ -30,6 +44,9 @@ export function transform(img, { factor = .05 } = {}) {
 
     // Memorise the original image's source if we haven't already.
     !img.hasAttribute(DATA_ORIGINAL_SRC) && img.setAttribute(DATA_ORIGINAL_SRC, src);
+
+    // Store the image element for re-rendering when the window resizes.
+    !~images.indexOf(img) && images.push(img);
 
     original.addEventListener('load', () => {
 
@@ -81,3 +98,6 @@ function createImage(src) {
     image.setAttribute('src', src);
     return image;
 }
+
+// Upon window resize, we'll re-render all images using debounce.
+window.addEventListener('resize', debounce(() => images.forEach(img => transform(img)), DEBOUNCE_THRESHOLD));
