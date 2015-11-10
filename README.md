@@ -13,3 +13,12 @@
 ![Screenshot](media/screenshot.png)
 
 * **npm:** `npm install legofy --save`
+
+## Usage
+
+Simply `import` the `transform` function from the Legofy module, and then invoke it by passing in your `img` element.
+
+```javascript
+import {transform} from 'legofy';
+transform(document.querySelector('img'));
+```
