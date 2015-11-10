@@ -4,7 +4,9 @@
         gulp       = require('gulp'),
         browserify = require('browserify'),
         babelify   = require('babelify'),
-        entryFile  = 'example/js/example.js';
+        eslint     = require('gulp-eslint'),
+        entryFile  = 'example/js/example.js',
+        bundleFile = 'example/js/bundle.js';
 
     var compile = function(destPath, entryFile) {
 
@@ -18,10 +20,20 @@
     };
 
     gulp.task('compile', function() {
-        return compile('example/js/bundle.js', entryFile);
+        return compile(bundleFile, entryFile);
+    });
+
+    gulp.task('lint', function() {
+
+        return gulp.src(entryFile)
+            .pipe(eslint())
+            .pipe(eslint.format())
+            .pipe(eslint.failOnError());
+
     });
 
     gulp.task('build', ['compile']);
+    gulp.task('test', ['lint']);
     gulp.task('default', ['build']);
 
     gulp.task('watch', function watch() {

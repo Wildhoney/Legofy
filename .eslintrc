@@ -1,0 +1,8 @@
+{
+  "extends": "airbnb/base",
+  "rules": {
+    "indent": [1,4],
+    "comma-dangle": [1, "never"],
+    "padded-blocks": 0
+  }
+}
