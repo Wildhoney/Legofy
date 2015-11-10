@@ -5,7 +5,7 @@ node_js:
   - 4.1
   - iojs
 
-install:
+postinstall:
   - npm run build
 
 sudo: false
