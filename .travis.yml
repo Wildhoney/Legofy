@@ -11,9 +11,6 @@ script:
 
 sudo: false
 
-addons:
-  firefox: 39.0
-
 deploy:
   provider: heroku
   all_branches: true
