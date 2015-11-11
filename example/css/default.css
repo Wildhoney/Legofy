@@ -25,6 +25,14 @@ img.logo {
     z-index: 2;
 }
 
+img.fork {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 149px;
+    height: 149px;
+}
+
 div.original {
     height: 100%;
     width: 50%;
