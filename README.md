@@ -14,7 +14,7 @@
 
 ![Screenshot](media/screenshot.png)
 
-## Usage
+## Getting Started
 
 Simply `import` the `transform` function from the Legofy module, and then invoke it by passing in your `img` element.
 
@@ -26,6 +26,8 @@ import {transform} from 'legofy';
 const imgElement = document.querySelector('img');
 transform(imgElement);
 ```
+
+## Options
 
 ### Brick Size
 
@@ -54,7 +56,7 @@ You can also change the `mix-blend-mode` value using the second argument &mdash;
 transform(imgElement, { blendMode: 'screen' });
 ```
 
-### Re-rendering
+## Re-rendering
 
 By default when the window is resized no re-rendering will occur &mdash; it's entirely up to the developer to invoke `transform` again.
 
