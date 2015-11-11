@@ -7,11 +7,11 @@ const DATA_ORIGINAL_SRC = 'data-src-original';
 /**
  * @method transform
  * @param {Element} img
+ * @param {Object} [factor]
  * @return {Element}
  */
-export function transform(img) {
+export function transform(img, { factor = .05 } = {}) {
 
-    const factor    = .05;
     const src       = img.getAttribute(DATA_ORIGINAL_SRC) || img.getAttribute('src');
     const original  = createImage(src);
     const canvas    = document.createElement('canvas');
@@ -36,7 +36,7 @@ export function transform(img) {
         const size   = factor * 400;
         const height = Math.ceil(getDimension('height') / size) * size;
         const width  = Math.ceil(getDimension('width') / size) * size;
-        const pixels = { height: height * factor, width: width * factor };
+        const small  = { height: height / size, width: width / size };
 
         // Configure the canvas.
         canvas.width  = width;
@@ -46,9 +46,9 @@ export function transform(img) {
         context.mozImageSmoothingEnabled = false;
         context.webkitImageSmoothingEnabled = false;
         context.imageSmoothingEnabled = false;
-        context.drawImage(original, 0, 0, pixels.width, pixels.height);
+        context.drawImage(original, 0, 0, small.width, small.height);
         context.rect(0, 0, width, height);
-        context.drawImage(canvas, 0, 0, pixels.width, pixels.height, 0, 0, width, height);
+        context.drawImage(canvas, 0, 0, small.width, small.height, 0, 0, width, height);
 
         // Apply the canvas to the SVG and place the Lego blocks on top.
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
