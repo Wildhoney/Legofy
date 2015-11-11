@@ -1,5 +1,17 @@
+import {throttle} from 'lodash';
 import {transform} from '../../src/core';
 
-document.addEventListener('DOMContentLoaded', () => {
-    transform(document.querySelector('img'), { factor: .05 });
-});
+(function($window, $document) {
+
+    $document.addEventListener('DOMContentLoaded', () => {
+
+        const imgElement = document.querySelector('img');
+        transform(imgElement);
+
+        $window.addEventListener('resize', throttle(() => {
+            transform(imgElement);
+        }, 250));
+
+    });
+
+})(window, document);

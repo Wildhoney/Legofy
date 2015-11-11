@@ -31,14 +31,13 @@
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.1.0",
     "gulp-karma": "0.0.5",
-    "karma": "^0.13.15"
+    "karma": "^0.13.15",
+    "lodash": "^3.10.1"
   },
   "browserify": {
     "transform": [
       "babelify"
     ]
   },
-  "dependencies": {
-    "lodash": "^3.10.1"
-  }
+  "optionalDependencies": {}
 }
