@@ -1,22 +1,8 @@
-import {debounce} from 'lodash';
-
 /**
  * @constant DATA_ORIGINAL_SRC
  * @type {String}
  */
 const DATA_ORIGINAL_SRC = 'data-src-original';
-
-/**
- * @constant DEBOUNCE_THRESHOLD
- * @type {Number}
- */
-const DEBOUNCE_THRESHOLD = 100;
-
-/**
- * @property images
- * @type {Array}
- */
-const images = [];
 
 /**
  * @method transform
@@ -44,9 +30,6 @@ export function transform(img) {
 
     // Memorise the original image's source if we haven't already.
     !img.hasAttribute(DATA_ORIGINAL_SRC) && img.setAttribute(DATA_ORIGINAL_SRC, src);
-
-    // Store the image element for re-rendering when the window resizes.
-    !~images.indexOf(img) && images.push(img);
 
     original.addEventListener('load', () => {
 
@@ -98,6 +81,3 @@ function createImage(src) {
     image.setAttribute('src', src);
     return image;
 }
-
-// Upon window resize, we'll re-render all images using debounce.
-addEventListener('resize', debounce(() => images.forEach(img => transform(img)), DEBOUNCE_THRESHOLD));
