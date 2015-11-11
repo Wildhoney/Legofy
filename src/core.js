@@ -7,10 +7,11 @@ const DATA_ORIGINAL_SRC = 'data-src-original';
 /**
  * @method transform
  * @param {Element} img
- * @param {Object} [factor]
+ * @param {Number} [factor]
+ * @param {String} [blendMode]
  * @return {Element}
  */
-export function transform(img, { factor = .05 } = {}) {
+export function transform(img, { factor = .05, blendMode = 'overlay' } = {}) {
 
     const src       = img.getAttribute(DATA_ORIGINAL_SRC) || img.getAttribute('src');
     const original  = createImage(src);
@@ -59,7 +60,7 @@ export function transform(img, { factor = .05 } = {}) {
                         </defs>
                         <g transform="scale(${isFirefox ? 2 : 1})">
                             <image width="${width}" height="${height}" x="0" y="0" xlink:href="${canvas.toDataURL()}" />
-                            <rect style="mix-blend-mode: overlay" fill="url(#bricks)" x="0" y="0" width="${width}" height="${height}" />
+                            <rect style="mix-blend-mode: ${blendMode}" fill="url(#bricks)" x="0" y="0" width="${width}" height="${height}" />
                         </g>
                      </svg>`;
 

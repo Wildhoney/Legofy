@@ -43,6 +43,17 @@ transform(imgElement, { factor: .025 });
 
 As the brick isn't currently SVG &mdash; [see ticket](https://github.com/Wildhoney/Legofy/issues/5) &mdash; larger bricks will look blurry.
 
+## Blend Mode
+
+You can also change the `mix-blend-mode` value using the second argument &mdash; the default is `overlay` however `screen`, `darken`, `color-burn`, `hard-light`, `soft-light` all look good as blend modes.
+
+```javascript
+// ...
+
+// Change bricks to a more pastel colour.
+transform(imgElement, { blendMode: 'screen' });
+```
+
 ## Browser Support
 
 <img src="https://github.com/alrra/browser-logos/raw/master/chrome/chrome_256x256.png" width="32" height="32" />
