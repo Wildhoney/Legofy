@@ -54,6 +54,23 @@ You can also change the `mix-blend-mode` value using the second argument &mdash;
 transform(imgElement, { blendMode: 'screen' });
 ```
 
+### Re-rendering
+
+By default when the window is resized no re-rendering is going to happen &mdash; it's left entirely up to the developer, and we recommend using a `throttle` function.
+
+```javascript
+import {throttle} from 'lodash';
+import {transform} from 'legofy';
+
+// ...
+
+const imgElement = document.querySelector('img');
+transform(imgElement);
+
+// 
+addEventListener('resize', throttle(() => transform(imgElement), 250));
+```
+
 ## Browser Support
 
 <img src="https://github.com/alrra/browser-logos/raw/master/chrome/chrome_256x256.png" width="32" height="32" />
