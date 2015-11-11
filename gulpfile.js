@@ -25,7 +25,7 @@
 
     gulp.task('lint', function() {
 
-        return gulp.src(entryFile)
+        return gulp.src('src/core.js')
             .pipe(eslint())
             .pipe(eslint.format())
             .pipe(eslint.failOnError());
