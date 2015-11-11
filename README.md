@@ -56,7 +56,7 @@ transform(imgElement, { blendMode: 'screen' });
 
 ### Re-rendering
 
-By default when the window is resized no re-rendering is going to happen &mdash; it's left entirely up to the developer, and we recommend using a `throttle` function.
+By default when the window is resized no re-rendering will occur &mdash; it's entirely up to the developer to invoke `transform` again.
 
 ```javascript
 import {throttle} from 'lodash';
