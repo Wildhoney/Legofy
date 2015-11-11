@@ -100,4 +100,4 @@ function createImage(src) {
 }
 
 // Upon window resize, we'll re-render all images using debounce.
-window.addEventListener('resize', debounce(() => images.forEach(img => transform(img)), DEBOUNCE_THRESHOLD));
+addEventListener('resize', debounce(() => images.forEach(img => transform(img)), DEBOUNCE_THRESHOLD));
