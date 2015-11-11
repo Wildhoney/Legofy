@@ -27,6 +27,22 @@ const imgElement = document.querySelector('img');
 transform(imgElement);
 ```
 
+### Brick Size
+
+You can adjust the size of the bricks by using the second argument of the `transform` function &mdash; by default the `factor` is `.05`.
+
+```javascript
+// ...
+
+// Make the bricks twice the size of the default.
+transform(imgElement, { factor: .1 });
+
+// ...Or make them twice as small!
+transform(imgElement, { factor: .025 });
+```
+
+As the brick isn't currently SVG &mdash; [see ticket](https://github.com/Wildhoney/Legofy/issues/5) &mdash; larger bricks will look blurry.
+
 ## Browser Support
 
 <img src="https://github.com/alrra/browser-logos/raw/master/chrome/chrome_256x256.png" width="32" height="32" />
