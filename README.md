@@ -10,9 +10,9 @@
 &nbsp;
 [![Heroku](https://img.shields.io/badge/web-Heroku-blue.svg?style=flat-square)](http://legofy.herokuapp.com/)
 
-![Screenshot](media/screenshot.png)
-
 * **npm:** `npm install legofy --save`
+
+![Screenshot](media/screenshot.png)
 
 ## Usage
 
