@@ -5,8 +5,8 @@
         browserify = require('browserify'),
         babelify   = require('babelify'),
         eslint     = require('gulp-eslint'),
-        entryFile  = 'example/js/example.js',
-        bundleFile = 'example/js/bundle.js';
+        uglify     = require('gulp-uglify'),
+        rename     = require('gulp-rename');
 
     var compile = function(destPath, entryFile) {
 
@@ -19,20 +19,33 @@
 
     };
 
+    gulp.task('example', function() {
+        return compile('example/js/bundle.js', 'example/js/example.js');
+    });
+
     gulp.task('compile', function() {
-        return compile(bundleFile, entryFile);
+        return compile('dist/legofy.js', 'src/core.js');
+    });
+
+    gulp.task('minify', ['compile'], function() {
+
+        return gulp.src('dist/legofy.js')
+                   .pipe(uglify())
+                   .pipe(rename('legofy.min.js'))
+                   .pipe(gulp.dest('dist'));
+
     });
 
     gulp.task('lint', function() {
 
         return gulp.src('src/core.js')
-            .pipe(eslint())
-            .pipe(eslint.format())
-            .pipe(eslint.failOnError());
+                   .pipe(eslint())
+                   .pipe(eslint.format())
+                   .pipe(eslint.failOnError());
 
     });
 
-    gulp.task('build', ['compile']);
+    gulp.task('build', ['example', 'compile', 'minify']);
     gulp.task('test', ['lint']);
     gulp.task('default', ['build']);
 
