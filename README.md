@@ -58,7 +58,7 @@ transform(imgElement, { blendMode: 'screen' });
 
 ## Re-rendering
 
-By default when the window is resized no re-rendering will occur &mdash; it's entirely up to the developer to invoke `transform` again.
+By default when the window is resized no re-rendering will occur &mdash; it's entirely up to the developer to invoke `transform` again &ndash; and thankfully the `transform` function is idempotent.
 
 ```javascript
 import {throttle} from 'lodash';
@@ -69,7 +69,7 @@ import {transform} from 'legofy';
 const imgElement = document.querySelector('img');
 transform(imgElement);
 
-// 
+//  ...
 addEventListener('resize', throttle(() => transform(imgElement), 250));
 ```
 
