@@ -41,13 +41,23 @@ function createCanvas() {
 }
 
 /**
+ * @method isFunction
+ * @param {Function} fn
+ * @return {Boolean}
+ */
+function isFunction(fn) {
+    return typeof fn === 'function';
+}
+
+/**
  * @method transform
  * @param {Element} img
  * @param {Number} [factor]
  * @param {String} [blendMode]
+ * @param {Function|Boolean} [quantize]
  * @return {void}
  */
-export function transform(img, { factor = DEFAULTS.FACTOR, blendMode = DEFAULTS.BLEND_MODE } = {}) {
+export function transform(img, { factor = DEFAULTS.FACTOR, blendMode = DEFAULTS.BLEND_MODE, quantize = false } = {}) {
 
     const {canvas, context} = createCanvas();
     const src = img.getAttribute(DATA_ORIGINAL_SRC) || img.getAttribute('src');
@@ -88,6 +98,13 @@ export function transform(img, { factor = DEFAULTS.FACTOR, blendMode = DEFAULTS.
         context.drawImage(original, 0, 0, small.width, small.height);
         context.rect(0, 0, width, height);
         context.drawImage(canvas, 0, 0, small.width, small.height, 0, 0, width, height);
+
+        if (isFunction(quantize)) {
+
+            // Quantize the current canvas if the function has been passed.
+            quantize(canvas);
+
+        }
 
         // Apply the canvas to the SVG and place the Lego blocks on top.
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
