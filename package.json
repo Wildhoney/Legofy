@@ -40,5 +40,8 @@
       "babelify"
     ]
   },
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "dependencies": {
+    "rgbquant": "^1.1.2"
+  }
 }
