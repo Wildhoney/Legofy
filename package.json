@@ -5,7 +5,8 @@
   "main": "src/core.js",
   "scripts": {
     "test": "gulp test",
-    "start": "node example/server/default.js"
+    "start": "node example/server/default.js",
+    "postinstall": "gulp build"
   },
   "repository": {
     "type": "git",

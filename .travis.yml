@@ -13,7 +13,6 @@ postinstall:
 deploy:
   provider: heroku
   all_branches: true
-  skip_cleanup: true
   api_key:
     secure: fluoYIq2WsykiqHP+F5wWE+IApeGJwL4jNDhSIZCfLNp/qEaNVJ+aW7Fxjwef4f7rZ6ZPgDZ1eyDa1gOq7yYK+bhtXmYleUjAP/jKdtJo3CjKhGqWuL/o2i7t1rBJbf7/y/i9EvK/XOP9WeRc9UpOedaGaXmh3W57H67Uk3iYhNGwUfkxih54CPyRbKhvRI+x2QsKyIfKf5E6eXCFlZ/wTS++I3QUU14WnxH+U3+GsbVFI1JdwscbBQhfj2XQNDSrsvAifIc7nQNYBqrXClPL/ox9KFuDaiysAiN5KCKwe1O4D0KFsB0UUgWIm2IaetI+iFKOuMQNdgAERYrPq74stqKeXCNWcl8rzLAsqha1vmvhAXo80OiMl4nlhIHV5DAaGpd4aUC8XTVEVlGJ8yPWjgoMI+wo+Db2/JvmZSwcsNJ/BW01TnjU/DpRwP1pP0ffEuxXC7Dgii+ANuGWWjux3V3ck920A5/XuH8f1iEkh8siUwqwqRW/dIC6XngykBK0b6nyr3fUcZ3MxTdhN39wmQ+x9C2tSTey6w6AWkTKwZafikbpO7sJRY3dDppKXlo6SLYoiPdaJGiRj8s7hl82rnD1IKgB3xEXxZ2AMDzZLTuzpmh1QTc+Cn0sojRu6C1QBvDYx8KdD/jyiDtwT6nYz/nx6553rzLiL4is20NqDo=
   app: legofy
