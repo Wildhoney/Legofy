@@ -11,6 +11,15 @@ const DATA_ORIGINAL_SRC = 'data-src-original';
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 /**
+ * @constant OPTIONS
+ * @type {Object}
+ */
+export const DEFAULTS = {
+    FACTOR: 0.05,
+    BLEND_MODE: 'overlay'
+};
+
+/**
  * @method createImage
  * @param {String} src
  * @return {Image}
@@ -36,9 +45,9 @@ function createCanvas() {
  * @param {Element} img
  * @param {Number} [factor]
  * @param {String} [blendMode]
- * @return {Element}
+ * @return {void}
  */
-export function transform(img, { factor = 0.05, blendMode = 'overlay' } = {}) {
+export function transform(img, { factor = DEFAULTS.FACTOR, blendMode = DEFAULTS.BLEND_MODE } = {}) {
 
     const {canvas, context} = createCanvas();
     const src = img.getAttribute(DATA_ORIGINAL_SRC) || img.getAttribute('src');
