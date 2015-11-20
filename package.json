@@ -5,6 +5,7 @@
   "main": "src/core.js",
   "scripts": {
     "test": "gulp test",
+    "build": "gulp build",
     "start": "node example/server/default.js"
   },
   "repository": {
