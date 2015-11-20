@@ -1,12 +1,11 @@
 {
   "name": "legofy",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Legofy your images with retina support using SVG.",
   "main": "src/core.js",
   "scripts": {
     "test": "gulp test",
-    "start": "node example/server/default.js",
-    "postinstall": "gulp build"
+    "start": "node example/server/default.js"
   },
   "repository": {
     "type": "git",
