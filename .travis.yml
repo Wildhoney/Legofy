@@ -7,11 +7,13 @@ node_js:
 
 sudo: false
 
-install:
+script:
+  - npm install
   - npm run build
 
 deploy:
   provider: heroku
+  strategy: api
   all_branches: true
   skip_cleanup: true
   api_key:
