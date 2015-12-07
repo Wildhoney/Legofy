@@ -93,7 +93,6 @@ export function transform(img, { factor = DEFAULTS.FACTOR, blendMode = DEFAULTS.
 
         // Setup the pixelation of the source image on the canvas.
         context.mozImageSmoothingEnabled = false;
-        context.webkitImageSmoothingEnabled = false;
         context.imageSmoothingEnabled = false;
         context.drawImage(original, 0, 0, small.width, small.height);
         context.rect(0, 0, width, height);
