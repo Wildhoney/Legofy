@@ -2,12 +2,12 @@ require('babel-loader');
 
 module.exports = {
     entry: {
-        keo: ['./src/core.js']
+        legofy: ['./src/core.js']
     },
     output: {
         path: __dirname + '/dist',
         filename: '[name].js',
-        library: 'keo',
+        library: 'legofy',
         libraryTarget: 'commonjs2'
     },
     module: {
