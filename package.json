@@ -2,7 +2,7 @@
   "name": "legofy",
   "version": "0.1.10",
   "description": "Legofy your images with retina support using SVG.",
-  "main": "dist/keo.js",
+  "main": "dist/legofy.js",
   "scripts": {
     "test": "eslint src/core.js",
     "build": "webpack",
