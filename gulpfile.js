@@ -10,7 +10,7 @@
 
     var compile = function(destPath, entryFile) {
 
-        return browserify({ debug: true })
+        return browserify({ debug: false })
             .transform(babelify)
             .require(entryFile, { entry: true })
             .bundle()
