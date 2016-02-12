@@ -107,7 +107,8 @@ export function transform(img, { factor = DEFAULTS.FACTOR, blendMode = DEFAULTS.
         }
 
         // Apply the canvas to the SVG and place the Lego blocks on top.
-        const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                          height="${height}" width="${width}">
                         <defs>
                             <pattern id="bricks" patternUnits="userSpaceOnUse" width="${size}" height="${size}">
                                 <image xlink:href="${brick}" width="${size}" height="${size}" x="0" y="0" />
