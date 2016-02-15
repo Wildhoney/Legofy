@@ -11,7 +11,7 @@
 [![Heroku](https://img.shields.io/badge/web-Heroku-blue.svg?style=flat-square)](http://legofy.herokuapp.com/)
 
 * **npm:** `npm install legofy --save`
-<img src="media/ng.png" width="20" height="20" /> **See:** [`angular-legofy`]().
+* <img src="media/ng.png" width="20" height="20" /> **See:** [`angular-legofy`]().
 
 ![Screenshot](media/screenshot.png)
 
