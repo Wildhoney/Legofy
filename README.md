@@ -14,7 +14,7 @@
 
 ![Screenshot](media/screenshot.png)
 
-<img src="images/ng.png" width="20" height="20" /> **See:** [`angular-legofy`]().
+<img src="media/ng.png" width="20" height="20" /> **See:** [`angular-legofy`]().
 
 ## Getting Started
 
