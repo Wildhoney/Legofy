@@ -14,6 +14,8 @@
 
 ![Screenshot](media/screenshot.png)
 
+<img src="images/ng.png" width="20" height="20" /> **See:** [`angular-legofy`]().
+
 ## Getting Started
 
 Simply `import` the `transform` function from the Legofy module, and then invoke it by passing in your `img` element.
