@@ -3,6 +3,7 @@
   "rules": {
     "indent": [1,4],
     "comma-dangle": [1, "never"],
-    "padded-blocks": 0
+    "padded-blocks": 0,
+    "no-unused-expressions": 0
   }
 }
