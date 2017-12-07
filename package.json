@@ -1,6 +1,6 @@
 {
   "name": "legofy",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Legofy your images with retina support using SVG.",
   "main": "dist/legofy.js",
   "scripts": {
